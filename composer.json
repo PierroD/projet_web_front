@@ -1,0 +1,17 @@
+{
+    "name": "pierrod/projet_web_front",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/app"
+        }
+    },
+    "authors": [
+        {
+            "name": "PierroD",
+            "email": "frozenphenix78@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "~3.3"
+    }
+}
