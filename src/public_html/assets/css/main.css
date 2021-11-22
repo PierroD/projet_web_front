@@ -1,4 +1,6 @@
 @import url("color.css");
+@import url("text.css");
+@import url("card.css");
 
 html {
   height: 100%;
@@ -24,6 +26,20 @@ body {
   grid-template-columns: 1fr 2fr;
 }
 
+.temperature-title {
+  font-weight: 300;
+  margin: 50px 0px 50px 0px;
+}
+
+.hour-title {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+.left-title {
+  font-weight: 500;
+  margin: 10px 0px 10px 0px;
+}
+
 .left-bar,
 .right-bar {
   padding: 20px;
@@ -40,7 +56,8 @@ body {
 }
 
 .separator-h {
-  border: solid dimgrey 1px;
+  border: solid #a6a4ac31 1px;
+  border-radius: 10px;
 }
 
 .image-container {
@@ -55,31 +72,17 @@ body {
   transform: translate(-50%, -50%);
   color: var(--color-text-main);
   font-weight: bold;
-  font-size: large;
+  font-size: 24px;
   font-family: "Roboto";
+  color: white;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 
-.card-container {
-  display: grid;
-  margin: 20px;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 25px;
-}
-
-.card-title {
-  color: var(--color-secondary);
-}
-
-.card-body {
-  font-size: xx-large;
-  font-weight: bolder;
-}
-
-.card-footer {
-  font-weight: bold;
-  font-size: large;
+.right-panel-title {
+  font-size: 32px;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 20px;
 }
