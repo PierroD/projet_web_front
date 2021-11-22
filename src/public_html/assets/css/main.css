@@ -1,8 +1,8 @@
 @import url("color.css");
 @import url("text.css");
 @import url("card.css");
-@import url("left-panel.css");
-@import url("right-panel.css");
+@import url("dashboard.css");
+@import url("login.css");
 
 html {
   height: 100%;
@@ -21,30 +21,8 @@ body {
   padding: 80px;
 }
 
-.main-container {
-  background-color: var(--color-background);
-  border: solid var(--color-secondary) 1px;
-  border-radius: 25px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.left-bar,
-.right-bar {
-  padding: 20px;
-}
-
-.left-bar {
-  background-color: var(--color-background);
-  border-radius: 25px 0px 0px 25px;
-}
-
-.right-bar {
-  background-color: var(--color-secondary);
-  border-radius: 0px 25px 25px 0px;
-}
 
 .separator-h {
-  border: solid #a6a4ac31 1px;
+  border: solid var(--color-bg-tertiary) 1px;
   border-radius: 10px;
 }
