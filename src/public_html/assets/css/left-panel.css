@@ -1,0 +1,32 @@
+.temperature-title {
+  font-weight: 300;
+  margin: 50px 0px 50px 0px;
+}
+
+.hour-title {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+.left-title {
+  font-weight: 500;
+  margin: 10px 0px 10px 0px;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-main);
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Roboto";
+  color: white;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}

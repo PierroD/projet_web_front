@@ -1,0 +1,33 @@
+.title-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.title-text {
+  font-size: 32px;
+}
+
+.login-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-image {
+  cursor: pointer;
+}
+
+.login-temperature-unit {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 20px;
+}

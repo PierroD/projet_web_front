@@ -16,4 +16,8 @@ class weatherController {
             'name' => $name
         ]]);
     }
+
+    public function showLogin() {
+        echo Controller::getTwig()->render('login.html.twig');
+    }
 }
