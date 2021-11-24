@@ -4,7 +4,11 @@
 		<div class="status-container">
 			<p class="status-temperature-unit">°C</p>
 			<a href="/login">
+			{% if user.isAuth %}
+				<img src="../src/public_html/assets/images/logout.png" height="50"  href="/logout"class="status-image"/>
+			{% else %}
 				<img src="../src/public_html/assets/images/login.png" height="50"  href="/login"class="status-image"/>
+			{% endif %}
 			</a>
 		</div>
 	</div>

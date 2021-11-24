@@ -33,3 +33,10 @@ div {
   position: relative;
   text-align: center;
 }
+
+.text-lighter {
+  font-weight: 200;
+}
+.text-bold {
+  font-weight: bold ;
+}

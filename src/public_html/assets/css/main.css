@@ -3,6 +3,7 @@
 @import url("card.css");
 @import url("dashboard.css");
 @import url("login.css");
+@import url("register.css");
 
 html {
   height: 100%;
@@ -21,8 +22,11 @@ body {
   padding: 80px;
 }
 
-
 .separator-h {
   border: solid var(--color-bg-tertiary) 1px;
   border-radius: 10px;
+}
+
+.clickable {
+  cursor: pointer;
 }
