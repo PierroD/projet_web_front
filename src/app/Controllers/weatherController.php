@@ -25,19 +25,4 @@ class weatherController {
         }
     }
 
-    public function showWithCityName($name) {
-        
-        echo Controller::getTwig()->render('dashboard.html.twig', ['person' => [
-            'name' => $name
-        ]]);
-    }
-
-
-    public function showLogin() {
-        echo Controller::getTwig()->render('login.html.twig');
-    }
-
-    public function showRegister() {
-        echo Controller::getTwig()->render('register.html.twig');
-    }
 }
