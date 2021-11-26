@@ -2,16 +2,20 @@
 
 namespace App\Routers;
 
+use App\Services\authService;
+
 class Route {
 
+    private $authService;
     private $path;
     private $callable;
     private $matches = [];
     private $params = [];
 
     public function __construct($path, $callable){
-        $this->path = trim($path, '/');  // On retire les / inutils
+        $this->path = trim($path, '/');  
         $this->callable = $callable;
+        $this->authService = new authService();
     }
 
     public function match($url){
@@ -33,17 +37,17 @@ class Route {
         }
         return $path;
     }
-
+    // Permet de récupérer certains éléments dans une url ex : https://.../?auth=ok  router()->with('id', '[0-9]')
     public function with($param, $regex){
         $this->params[$param] = str_replace('(', '(?:', $regex);
-        return $this; // On retourne tjrs l'objet pour enchainer les arguments
+        return $this;
     }
 
-    public function call(){
+    public function routeToController(){
         if(is_string($this->callable)){
             $params = explode('#', $this->callable);
             $controller = "App\\Controllers\\" . $params[0] . "Controller";
-            $controller = new $controller();
+            $controller = new $controller($this->getAuthService());
             return call_user_func_array([$controller, $params[1]], $this->matches);
         } else {
             return call_user_func_array($this->callable, $this->matches);
@@ -55,6 +59,13 @@ class Route {
             return '(' . $this->params[$match[1]] . ')';
         }
         return '([^/]+)';
+    }
+
+    private function getAuthService() {
+        if($this->authService === null) {
+            $this->authService = new authService();
+        }
+        return $this->authService;
     }
 
 }

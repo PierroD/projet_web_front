@@ -1,5 +1,17 @@
 <div >
-    <h3 class="right-panel-title">Today Highlight's</h3>
+	<div class="title-container">
+    	<h3 class="right-panel-title-text">Today Highlight's</h3>
+		<div class="status-container">
+			<p class="status-temperature-unit">°C</p>
+			<a href="/login">
+			{% if user.isAuth %}
+				<img src="../src/public_html/assets/images/logout.png" height="50"  href="/logout"class="status-image"/>
+			{% else %}
+				<img src="../src/public_html/assets/images/login.png" height="50"  href="/login"class="status-image"/>
+			{% endif %}
+			</a>
+		</div>
+	</div>
 	<div class="card-container">
 		<div class="card">
         	<div class="card-title">Wind Status</div>

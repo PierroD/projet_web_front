@@ -2,18 +2,27 @@
 
 namespace App\Controllers;
 
+use App\Services\authService;
+
 class weatherController {
 
-    public function show() {
-        echo Controller::getTwig()->render('home.html.twig', ['person' => [
-            'name' => 'Paris'
-        ]]);
+    protected authService $authService;
+
+    public function __construct(authService $authService)
+    {
+        $this->authService = $authService;
     }
 
-    public function showWithCityName($name) {
-        
-        echo Controller::getTwig()->render('home.html.twig', ['person' => [
-            'name' => $name
-        ]]);
+    public function show() {
+        if($this->authService->isAuth()) {
+            echo Controller::getTwig()->render('dashboard.html.twig', ['user' => [
+                'name' => $this->authService->getUser()["name"],
+                'city' => $this->authService->getUser()["city"],
+                'isAuth' => $this->authService->getUser()["isAuth"],
+            ]]);    
+        } else {
+            header('Location: /login');
+        }
     }
+
 }
