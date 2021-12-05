@@ -12,6 +12,7 @@ $router->get('/', "auth#showRegister");
 $router->get('/login', "auth#showLogin");
 $router->get('/register', "auth#showRegister");
 
+$router->post('/', "auth#register");
 $router->post('/login', 'auth#login');
 $router->post('/register', 'auth#register');
 
