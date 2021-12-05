@@ -19,17 +19,33 @@ class authController {
 
     public function register() {
         $response = $this->apiService->sendPost("Login/register.php", $_POST);
-        if(isset($response) && !empty($response)) {
+        if(isset($response) && !empty($response) && $response->status == "200") {
             $this->authService->setUser($response->username, $response->city, true); 
                 header('Location: /dashboard');
             }
+        else if(isset($response) && !empty($response)) {
+            echo Controller::getTwig()->render('register.html.twig', ["error" => [
+                "message" => $response->message,
+            ]]);
         }
+        else {
+            echo Controller::getTwig()->render('register.html.twig');
+        }
+    }
 
     public function login() {
         $response = $this->apiService->sendPost("Login/login.php", $_POST);
-        if(isset($response) && !empty($response)) {
-        $this->authService->setUser($response->username, $response->city, true); 
+        if(isset($response->username) && !empty($response->username) && $response->status == "200") {
+            $this->authService->setUser($response->username, $response->city, true); 
             header('Location: /dashboard');
+        }
+        else if(isset($response->message) && !empty($response->message)) {
+            echo Controller::getTwig()->render('login.html.twig', ["error" => [
+                "message" => $response->message,
+            ]]);
+        }
+        else {
+            echo Controller::getTwig()->render('login.html.twig');
         }
     }
 
