@@ -109,6 +109,8 @@ Pour l'API :
 
 - Téléchargez le projet sur le lien suivant : [Télécharger](https://github.com/PierroD/projet_web_front)
 - Mettre le contenu du repos dans le dossier du Vhost de votre choix
+- Faire la commande suivante : `composer install`
+- Faire la commande suivante : `composer dump-autoload`
 - Le front utilise de la ré-écriture d'URL (vérifiez que ce paramètre est activé dans votre Vhost)
 ```
   <VirtualHost *:80>
