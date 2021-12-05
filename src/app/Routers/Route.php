@@ -2,11 +2,13 @@
 
 namespace App\Routers;
 
+use App\Services\apiService;
 use App\Services\authService;
 
 class Route {
 
     private $authService;
+    private $apiService;
     private $path;
     private $callable;
     private $matches = [];
@@ -47,7 +49,7 @@ class Route {
         if(is_string($this->callable)){
             $params = explode('#', $this->callable);
             $controller = "App\\Controllers\\" . $params[0] . "Controller";
-            $controller = new $controller($this->getAuthService());
+            $controller = new $controller($this->getAuthService(), $this->getApiService());
             return call_user_func_array([$controller, $params[1]], $this->matches);
         } else {
             return call_user_func_array($this->callable, $this->matches);
@@ -66,6 +68,13 @@ class Route {
             $this->authService = new authService();
         }
         return $this->authService;
+    }
+
+    private function getApiService() {
+        if($this->apiService === null) {
+            $this->apiService = new apiService();
+        }
+        return $this->apiService;
     }
 
 }

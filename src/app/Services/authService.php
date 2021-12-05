@@ -2,8 +2,6 @@
 
 namespace App\Services;
 
-use authServiceInterface;
-
 class authService {
 
     private $user;
@@ -17,6 +15,9 @@ class authService {
 
     public function getUser() {
         return $_SESSION["user"];
+    }
+    public function getUserCity() {
+        return $_SESSION["user"]["city"];
     }
 
     public function isAuth() {

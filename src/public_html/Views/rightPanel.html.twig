@@ -2,7 +2,6 @@
 	<div class="title-container">
     	<h3 class="right-panel-title-text">Today Highlight's</h3>
 		<div class="status-container">
-			<p class="status-temperature-unit">°C</p>
 			<a href="/login">
 			{% if user.isAuth %}
 				<img src="../src/public_html/assets/images/logout.png" height="50"  href="/logout"class="status-image"/>
@@ -16,28 +15,29 @@
 		<div class="card">
         	<div class="card-title">Wind Status</div>
 			<div class="card-body">
-				7.70 km/h
+				{{ meteo.ventVitesse }} km/h
 			</div>
-			<div class="card-footer">Average</div>
+			<div class="card-footer">Direction : {{ meteo.ventDirection }} </div>
         </div>
 		<div class="card">
         	<div class="card-title">Sunrise & Sunset</div>
 			<div class="card-body">
-				7.70 km/h
+				{{ meteo.leveSoleil }}
+				{{ meteo.coucheSoleil }}
 			</div>
         </div>
 	</div>
 	<div class="card-container">
 		<div class="card">
-        	<div class="card-title">Wind Status</div>
+        	<div class="card-title">Humidity</div>
 			<div class="card-body">
-				7.70 km/h
+				{{ meteo.humidite }}%
 			</div>
         </div>
 		<div class="card">
-        	<div class="card-title">Wind Status</div>
+        	<div class="card-title">Visibility</div>
 			<div class="card-body">
-				7.70 km/h
+				{{ meteo.visibilite }} km(s)
 			</div>
         </div>
 	</div>
