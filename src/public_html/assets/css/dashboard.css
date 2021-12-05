@@ -1,0 +1,38 @@
+@import url("left-panel.css");
+@import url("right-panel.css");
+
+.dashboard-body {
+  margin: 0;
+  background-image: url("../images/dashboard-bg.jpg");
+  background-position: center top;
+  background-size: 100% auto;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+}
+
+.dashboard-container {
+  background-color: var(--color-bg-primary);
+  border: solid var(--color-bg-secondary) 1px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 1440px;
+  
+}
+
+.left-bar,
+.right-bar {
+  padding: 20px 80px;
+}
+
+.left-bar {
+  background-color: var(--color-bg-primary);
+  border-radius: 25px 0px 0px 25px;
+}
+
+.right-bar {
+  background-color: var(--color-bg-secondary);
+  border-radius: 0px 25px 25px 0px;
+}

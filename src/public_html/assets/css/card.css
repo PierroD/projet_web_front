@@ -1,0 +1,39 @@
+.card-container {
+  /* display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(2, 1fr); */
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 50px;
+  flex: 1;
+  margin: 10px;
+}
+
+.card-title {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  flex-direction: row;
+  font-size: 16px;
+  margin: 0px 0px 20px 0px;
+}
+
+.card-body {
+  font-size: xx-large;
+  font-weight: bolder;
+  font-weight: 400;
+  font-size: 32px;  
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.card-footer {
+  font-weight: 200;
+  font-size: 16px;
+}

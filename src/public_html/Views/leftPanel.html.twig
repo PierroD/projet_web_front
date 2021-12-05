@@ -1,0 +1,17 @@
+<div class="text-center">
+    <div class="image-container">
+        <img src="../src/public_html/assets/images/{{ meteo.icon }}.png" height="200" width="200"/>
+    </div>
+    <h2 class="text-big temperature-title">{{ meteo.temperature }}°C</h2>
+    <div class="left-title">
+        <p>Today</p>
+    </div>
+</div>
+<div class="separator-h"></div>
+<div class="text-center">
+    <div class="left-title">{{ meteo.conditionMeteo }}</div>
+</div>
+ <div class="image-container">
+    <img src="https://picsum.photos/300/100" width="300" height="100" style="border-radius: 15px; filter: grayscale(100%);;"/>
+    <div class="centered">{{ meteo.nom }}, {{ meteo.paysCode }}</div>
+ </div>

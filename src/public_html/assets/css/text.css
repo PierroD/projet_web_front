@@ -1,0 +1,42 @@
+:root {
+  --text-family: "Roboto";
+}
+
+h4,
+h3,
+h2,
+h1,
+p,
+a,
+span,
+div {
+  font-family: var(--text-family);
+}
+
+.text-big {
+  font-size: 64px;
+}
+
+.text-medium {
+  font-size: 32px;
+}
+
+.text-small {
+  font-size: 16px;
+}
+
+.text-xsmall {
+  font-size: 8px;
+}
+
+.text-center {
+  position: relative;
+  text-align: center;
+}
+
+.text-lighter {
+  font-weight: 200;
+}
+.text-bold {
+  font-weight: bold ;
+}
